@@ -63,8 +63,41 @@ function generatePassword() {
               alert("You must select at least one crtieria of lowercase, uppercase, numbers or special characters")
               showPrompts();
             }
+            else {
+              if (lowerCase === true && pwdCriteria.pwdLength < passwordLength) {
+                var lc = pwdCriteria.pwdLowerCase[Math.floor(Math.random() *26)]
+                result = result + lc;
+                pwdCriteria.pwdLength++;
+
+              }
+              if (specialChar === true && pwdCriteria.pwdLength < passwordLength) {
+                var sc = pwdCriteria[Math.floor(Math.random() * 32)]
+                result = result + sc;
+                pwdCriteria.pwdLength++;
+              }
+
+              if (upperCase === true && pwdCriteria.pwdLength < passwordLength) {
+                var uc = pwdCriteria.pwdUpperCase[Math.floor(Math.random() * 26)]
+                result = result + uc;
+                pwdCriteria.pwdLength++;
+              }
+
+              if (numbers === true && pwdCriteria.pwdLength < passwordLength) {
+                var num = pwdCriteria.pwdNumber[Math.floor(Math.random() * 10)]
+                result = result + num;
+                pwdCriteria.pwdLength++;
+              }
+            }
           }
         }
+      }
+      return result;
+
+      function showPrompts() {
+        lowerCase = confirm("Do you want to use lower case letters?");
+        upperCase = confirm("Do you want to use upper case letters?");
+        numbers = confirm("Do you want to use numbers?");
+        specialChar = confirm("Do you want to use any special characters?")
       }
     }
   }
