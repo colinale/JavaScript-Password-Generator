@@ -27,3 +27,24 @@ var pwdCriteria = {
   pwdSpecialCharacter: ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "{", "[", "}", "]", "\\",
   "|", ":", ";", "'", "<", ",", ">", ".", "?", "/", "\"", "`", "~"],
 }
+
+function generatePassword() {
+  var result = "";
+  var passwordLength = 0;
+  var pwdUpperCase;
+  var pwdLowerCase;
+  var numbers;
+  var specialChar;
+
+  passwordLength = 0;
+  pwdCriteria.pwdLength = 0;
+  result = "";
+
+  while (passwordLength < 8 | passwordLength > 128) {
+    passwordLength = prompt("How many characters do you want your password to be? \nPassword must be between 8 and 128 characters.");
+
+    
+    }
+    
+  }
+}
