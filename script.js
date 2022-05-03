@@ -43,8 +43,29 @@ function generatePassword() {
   while (passwordLength < 8 | passwordLength > 128) {
     passwordLength = prompt("How many characters do you want your password to be? \nPassword must be between 8 and 128 characters.");
 
-    
+    if (passwordLength === null) {
+      return "Your secure password";
     }
-    
+    else {
+      if (!isFinite(passwordLength)) {
+        alert("You did not enter a number");
+        return "your secure password";
+      }
+      else {
+        if (passwordLength < 8 || passwordLength > 128) {
+          alert("Password must be bewteen 8 and 128 characters.");
+          return "Your secure password";
+        }
+        else{
+          showPrompts();
+          while (pwdCriteria.pwdLength < passwordLength) {
+            if (lowerCase === false && upperCase === false && numbers === false && specialChar === false) {
+              alert("You must select at least one crtieria of lowercase, uppercase, numbers or special characters")
+              showPrompts();
+            }
+          }
+        }
+      }
+    }
   }
 }
