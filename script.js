@@ -16,6 +16,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+//  Added numbers, letters, special characters
 var pwdCriteria = {
   pwdLength: 0,
   pwdLowerCase: ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],
@@ -40,6 +41,7 @@ function generatePassword() {
   pwdCriteria.pwdLength = 0;
   result = "";
 
+  // Rules for generating password
   while (passwordLength < 8 | passwordLength > 128) {
     passwordLength = prompt("How many characters do you want your password to be? Password must be between 8 and 128 characters.");
 
@@ -92,7 +94,7 @@ function generatePassword() {
         }
       }
       return result;
-
+      // Questions for random password
       function showPrompts() {
         lowerCase = confirm("Do you want to use lower case letters?");
         upperCase = confirm("Do you want to use upper case letters?");
