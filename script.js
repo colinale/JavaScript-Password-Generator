@@ -71,7 +71,7 @@ function generatePassword() {
 
               }
               if (specialChar === true && pwdCriteria.pwdLength < passwordLength) {
-                var sc = pwdCriteria[Math.floor(Math.random() * 32)]
+                var sc = pwdCriteria.pwdSpecialCharacter[Math.floor(Math.random() * 32)]
                 result = result + sc;
                 pwdCriteria.pwdLength++;
               }
