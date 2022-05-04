@@ -41,7 +41,7 @@ function generatePassword() {
   result = "";
 
   while (passwordLength < 8 | passwordLength > 128) {
-    passwordLength = prompt("How many characters do you want your password to be? \nPassword must be between 8 and 128 characters.");
+    passwordLength = prompt("How many characters do you want your password to be? Password must be between 8 and 128 characters.");
 
     if (passwordLength === null) {
       return "Your secure password";
